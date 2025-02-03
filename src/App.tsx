@@ -10,15 +10,22 @@ import Blog from './pages/Blog';
 import Gallery from './pages/Gallery';
 
 const App: React.FC = () => {
+  const routeConfig = [
+    { path: "/", element: <Home /> },
+    { path: "/about", element: <About /> },
+    { path: "/contact", element: <Contact /> },
+    { path: "/blog", element: <Blog /> },
+    { path: "/gallery", element: <Gallery /> }
+  ];
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Routes>
+          {routeConfig.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Routes>
       </Routes>
       <Footer />
     </>
