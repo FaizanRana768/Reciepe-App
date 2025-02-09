@@ -21,11 +21,9 @@ const App: React.FC = () => {
     <>
       <Header />
       <Routes>
-        <Routes>
-          {routeConfig.map(({ path, element }) => (
-            <Route key={path} path={path} element={element} />
-          ))}
-        </Routes>
+        {routeConfig.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
       </Routes>
       <Footer />
     </>
