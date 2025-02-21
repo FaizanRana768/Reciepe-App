@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
 import Siderbar from "./Siderbar";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js"; 
+import { Box } from "@mui/material";
 
 const Header = () => {
-  const [bgColor, setBgColor] = useState("transparent");
+  // const [bgColor, setBgColor] = useState("transparent");
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
-      setBgColor("bg-black");
+      // setBgColor("bg-black");
     } else {
-      setBgColor("bg-transparent");
+      // setBgColor("bg-transparent");
     }
   };
 
@@ -35,7 +36,7 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <div className={` ${bgColor} duration-500 fixed top-0 z-50 w-full ease-in-out`}>
+    <Box className={`bg-black duration-500 fixed top-0 z-50 w-full ease-in-out`}>
       <>
         <motion.div
           initial={{ opacity: 0, y: -40 }}
@@ -43,20 +44,20 @@ const Header = () => {
           transition={{ duration: 1 }}
           className="hidden md:flex justify-between items-center p-4 bg-transparent"
         >
-          <div style={{ width: "100px", height: "50px" }}>
+          <Box style={{ width: "100px", height: "50px" }}>
             <Link to="/" aria-label="Go to homepage">
               <img
                 onClick={ScrollToTop}
-                src="/Xsuitelogo.webp"
-                className="w-full h-auto "
+                src="/src/assets/images/Xsuitelogo.webp"
+                className="w-full h-auto mt-2"
                 alt="Xsuite logo image"
                 height="50"
                 width="100"
               />
             </Link>
-          </div>
+          </Box>
 
-          <div>
+          <Box>
             <ul className="flex space-x-10">
               <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
                 <Link onClick={ScrollToTop} to="/">
@@ -80,28 +81,26 @@ const Header = () => {
               </li>
               
             </ul>
-          </div>
+          </Box>
 
           {/* Contact number for desktop */}
-          <div className="flex items-center  space-x-2 hover:text-orange-500 duration-300 ease-in-out text-white ">
+          <Box className="flex items-center  space-x-2 hover:text-orange-500 duration-300 ease-in-out text-white ">
             <Icon icon="mdi-light:phone" className="h-5 w-5" />
             <Link to="tel:03316361916">03316361916</Link>
-          </div>
+          </Box>
         </motion.div>
 
-        {/* Navbar for mobile */}
-        <div className="md:hidden flex justify-center ml-[-16px] mb-[-10px]">
+        <Box className="md:hidden flex justify-center ml-[-16px] mb-[-10px]">
           
-          {/* Contact number for mobile, aligned next to the sidebar */}
-          <div className="lg:flex items-center space-x-1 hidden  hover:text-orange-500 duration-300 ease-in-out text-white">
+          <Box className="lg:flex items-center space-x-1 hidden  hover:text-orange-500 duration-300 ease-in-out text-white">
             <Icon icon="mdi-light:phone" className="h-5 w-5" />
             <Link to="tel:03316361916">03316361916</Link>
-          </div>
-        </div>
+          </Box>
+        </Box>
       </>
       <Siderbar />
 
-    </div>
+    </Box>
   );
 };
 
