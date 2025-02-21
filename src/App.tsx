@@ -12,10 +12,10 @@ import Gallery from './pages/Gallery';
 const App: React.FC = () => {
   const routeConfig = [
     { path: "/", element: <Home /> },
-    { path: "/about", element: <About /> },
-    { path: "/contact", element: <Contact /> },
-    { path: "/blog", element: <Blog /> },
-    { path: "/gallery", element: <Gallery /> }
+    { path: "/About", element: <About /> },
+    { path: "/Contact", element: <Contact /> },
+    { path: "/PackageDetails", element: <Blog /> },
+    { path: "/Services", element: <Gallery /> }
   ];
   return (
     <>

@@ -4,7 +4,7 @@ export const HeaderStyle = css`
   display: flex;
   align-items: center;
   padding: 1.5rem 2rem;
-  background-color: #333;
+  background-color: #080808;
   color: white;
   list-style-type: none;
 
