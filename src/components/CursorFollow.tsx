@@ -1,37 +1,48 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
-const CursorFollow = () => {
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+export default function CursorFollow() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  useEffect(() => { 
+    const handleMouseMove = (e : MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
 
-    useEffect(() => {
-        const moveCursor = (e: MouseEvent) => {
-            setPosition({ x: e.clientX, y: e.clientY });
-        };
+    window.addEventListener('mousemove', handleMouseMove)
 
-        window.addEventListener("mousemove", moveCursor);
-        return () => window.removeEventListener("mousemove", moveCursor);
-    }, []);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
 
-    return (
-        <motion.div
-            style={{
-                position: "fixed",
-                width: "10px",
-                height: "10px",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                pointerEvents: "none",
-                zIndex: 9999,
-                mixBlendMode: "difference",
-            }}
-            animate={{
-                x: position.x - 5, // Centering the dot on the cursor
-                y: position.y - 5, // Centering the dot on the cursor
-            }}
-            transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        />
-    );
-};
-
-export default CursorFollow;
+  return (
+    <div className="fixed inset-0 pointer-events-none sm-block z-[10000] overflow-hidden">
+      <motion.div
+        className="w-4 h-4 rounded-full bg-orange-500 fixed pointer-events-none"
+        animate={{
+          x: mousePosition.x - 8,
+          y: mousePosition.y - 8,
+        }}
+        transition={{
+          type: "spring",
+          damping: 25,
+          stiffness: 300,
+          mass: 0.5,
+        }}
+      />
+      <motion.div
+        className="w-12 h-12 rounded-full border-2 border-orange-500/50 fixed pointer-events-none"
+        animate={{
+          x: mousePosition.x - 24,
+          y: mousePosition.y - 24,
+        }}
+        transition={{
+          type: "spring",
+          damping: 15,
+          stiffness: 150,
+          mass: 1,
+        }}
+      />
+    </div>
+  )
+}
