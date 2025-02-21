@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from "framer-motion";
 import Siderbar from "./Siderbar";
 import {  useEffect } from "react";
@@ -5,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js"; 
 import { Box } from "@mui/material";
 
-const Header = () => {
+const Header:React.FC = () => {
   // const [bgColor, setBgColor] = useState("transparent");
 
   const handleScroll = () => {
@@ -65,19 +66,19 @@ const Header = () => {
                 </Link>
               </li>
               <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/Services">Services</Link>
+                <Link to="/services">Services</Link>
               </li>
               <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/About">About Us</Link>
+                <Link to="/about">About Us</Link>
               </li>
               <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/PackageDetails">Packages</Link>
+                <Link to="/packagedetails">Packages</Link>
               </li>
               <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/Portfolio">Portfolio</Link>
+                <Link to="/portfolio">Portfolio</Link>
               </li>
               <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/Contact">Contact</Link>
+                <Link to="/contact">Contact</Link>
               </li>
               
             </ul>
