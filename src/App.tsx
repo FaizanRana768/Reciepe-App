@@ -8,6 +8,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Services from './pages/Services';
+import CursorFollow from './components/CursorFollow';
 
 const App: React.FC = () => {
   const routeConfig = [
@@ -19,6 +20,7 @@ const App: React.FC = () => {
   ];
   return (
     <>
+    <CursorFollow />
       <Header />
       <Routes>
         {routeConfig.map(({ path, element }) => (

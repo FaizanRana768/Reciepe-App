@@ -22,3 +22,15 @@ export const HeaderStyle = css`
     color: red;
   }
 `;
+export const cursorFollowStyle = {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "10px",
+  height: "10px",
+  backgroundColor: "white",
+  borderRadius: "50%",
+  pointerEvents: "none",
+  zIndex: 9999,
+  mixBlendMode: "difference",
+};
