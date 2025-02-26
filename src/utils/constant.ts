@@ -22,3 +22,20 @@ export const contactDetails = [
     { type: "Timing", value: "Mon-Sat: 9am-5pm" },
     { type: "Location", value: "Lawrence Road Lahore, Pakistan", link: "https://www.google.com/maps?q=Lawrence+Road" },
 ]
+
+export const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About Us", path: "/about" },
+    { name: "Packages", path: "/packagedetails" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "Contact", path: "/contact" },
+];
+
+export const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/Services" },
+    { name: "About Us", path: "/About" },
+    { name: "Contact", path: "/Contact" },
+    { name: "Packages", path: "/PackageDetails" },
+];

@@ -4,7 +4,7 @@ import { contactDetails, services, socialLinks } from "../utils/constant";
 
 function Footer() {
   return (
-    <footer className="bg-black text-gray-300 py-20 font-sans tracking-wide">
+    <footer className="bg-black text-gray-300 pt-16 pb-10 font-sans tracking-wide">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16">
           <div className="flex flex-col items-center text-center">

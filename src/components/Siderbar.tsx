@@ -2,18 +2,12 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { menuItems } from "../utils/constant";
 
 const Sidebar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
-  const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/Services" },
-    { name: "About Us", path: "/About" },
-    { name: "Contact", path: "/Contact" },
-    { name: "Packages", path: "/PackageDetails" },
-  ];
 
   // Scroll to top function
   const ScrollToTop = () => {
@@ -26,14 +20,12 @@ const Sidebar = () => {
   return (
     <div>
       <div className="md:hidden flex items-center justify-between p-4 bg-transparent">
-        {/* Logo */}
         <div>
           <Link onClick={ScrollToTop} to={"/"}>
-            <img src={"/logo-min.webp"} width={100} height={100} alt="Logo" />
+            <img src={"/src/assets/images/Xsuitelogo.webp"} className="mt-[1.4rem]" width={100} height={100} alt="Logo" />
           </Link>
         </div>
 
-        {/* Sidebar Toggle Button */}
         <button
           className="mr-12 rounded-md duration-300 ease-in-out text-white hover:bg-gray-700"
           onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -59,8 +51,8 @@ const Sidebar = () => {
               <Icon icon="mdi:close" />
             </button>
             <ul className="space-y-4 text-center">
-              {menuItems.map((item, index) => (
-                <li key={index}>
+              {menuItems.map((item) => (
+                <li key={item.name}>
                   <Link
                     onClick={ScrollToTop}
                     to={item.path}

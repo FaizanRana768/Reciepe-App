@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import Siderbar from "./Siderbar";
-import {  useEffect } from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Icon } from "@iconify/react"; 
+import { Icon } from "@iconify/react";
 import { Box } from "@mui/material";
+import { navLinks } from '../utils/constant';
 
-const Header:React.FC = () => {
+const Header: React.FC = () => {
   // const [bgColor, setBgColor] = useState("transparent");
 
   const handleScroll = () => {
@@ -51,7 +52,7 @@ const Header:React.FC = () => {
                 onClick={ScrollToTop}
                 src="/src/assets/images/Xsuitelogo.webp"
                 className="w-full h-auto mt-2"
-                alt="Xsuite logo image"
+                alt="xsuite-logo"
                 height="50"
                 width="100"
               />
@@ -60,39 +61,28 @@ const Header:React.FC = () => {
 
           <Box>
             <ul className="flex space-x-10">
-              <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link onClick={ScrollToTop} to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/services">Services</Link>
-              </li>
-              <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/about">About Us</Link>
-              </li>
-              <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/packagedetails">Packages</Link>
-              </li>
-              <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/portfolio">Portfolio</Link>
-              </li>
-              <li className="text-white hover:text-orange-500 transition duration-300 ease-in-out">
-                <Link to="/contact">Contact</Link>
-              </li>
-              
+              {navLinks.map(({ name, path }) => (
+                <li key={path}>
+                  <Link
+                    to={path}
+                    className="text-white hover:text-orange-500 transition duration-300 ease-in-out"
+                    onClick={ScrollToTop}
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </Box>
 
-          {/* Contact number for desktop */}
-          <Box className="flex items-center  space-x-2 hover:text-orange-500 duration-300 ease-in-out text-white ">
+          <Box className="lg:flex hidden items-center space-x-2 hover:text-orange-500 duration-300 ease-in-out text-white ">
             <Icon icon="mdi-light:phone" className="h-5 w-5" />
             <Link to="tel:03316361916">03316361916</Link>
           </Box>
         </motion.div>
 
         <Box className="md:hidden flex justify-center ml-[-16px] mb-[-10px]">
-          
+
           <Box className="lg:flex items-center space-x-1 hidden  hover:text-orange-500 duration-300 ease-in-out text-white">
             <Icon icon="mdi-light:phone" className="h-5 w-5" />
             <Link to="tel:03316361916">03316361916</Link>
