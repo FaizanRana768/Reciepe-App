@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Siderbar from "./Siderbar";
 import {  useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Icon } from "@iconify/react/dist/iconify.js"; 
+import { Icon } from "@iconify/react"; 
 import { Box } from "@mui/material";
 
 const Header:React.FC = () => {
