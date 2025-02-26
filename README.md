@@ -41,7 +41,7 @@ export default tseslint.config({
     react,
   },
   rules: {
-    // other rules...  https://xsuite.digital/
+    // other rules...  https://xsuite.digital/  ....https://www.youtube.com/watch?v=fxT54eRIsc4
     // Enable its recommended rules
     ...react.configs.recommended.rules,
     ...react.configs['jsx-runtime'].rules,
