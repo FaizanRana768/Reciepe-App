@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom"; 
-import WorkProcess from "../components/main/WorkProcess";
-import { servicesInfo } from "../components/main/Helpers/Data";
 import FAQs from "../components/FAQs";
+import WorkProcess from "../marketing-page/WorkProcess";
 
 // Define Type for a Service
 type ServiceType = {
