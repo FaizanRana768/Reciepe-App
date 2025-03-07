@@ -1,3 +1,4 @@
+import { FaCode } from "react-icons/fa";
 export const services = [
     { name: "SEO", path: "/Services/seo" },
     { name: "Google Ads", path: "/Services/google-my-business-optimization" },
@@ -75,12 +76,12 @@ export const servicesDetails = [
     },
 ];
 export const triangles = [
-  { top: "10%", left: "10%", rotate: 0 },
-  { top: "20%", right: "15%", rotate: 45 },
-  { bottom: "30%", left: "20%", rotate: 180 },
-  { top: "40%", right: "10%", rotate: 90 },
+    { top: "10%", left: "10%", rotate: 0 },
+    { top: "20%", right: "15%", rotate: 45 },
+    { bottom: "30%", left: "20%", rotate: 180 },
+    { top: "40%", right: "10%", rotate: 90 },
 ];
-export  const testimonials = [
+export const testimonials = [
     {
         name: "Holden Caulfield",
         role: "UI DEVELOPER",
@@ -140,9 +141,20 @@ export const faqs = [
             "Your feedback is essential to us! We prioritize open communication and are ready to adjust the campaign promptly to align with your vision and expectations.",
     },
 ];
-export  const stats = [
+export const stats = [
     { number: 100, suffix: '+', label: 'Satisfied Global Clients' },
     { number: 10, suffix: 'K+', label: ' Projects Successfully Delivered' },
     { number: 20, suffix: '+', label: ' Dedicated Team Members' },
     { number: 5, suffix: '+', label: 'Years of Industry Experience' },
 ];
+
+export const servicesInfo = [
+    {
+        id: 1,
+        title: "Web Development",
+        description: "Build a responsive and optimized website with our development services",
+        icon: FaCode,
+        path: "Web",
+    },
+];
+

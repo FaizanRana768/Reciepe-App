@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom"; 
 import FAQs from "../components/FAQs";
 import WorkProcess from "../marketing-page/WorkProcess";
+import { servicesInfo } from "../utils/constant";
 
 // Define Type for a Service
 type ServiceType = {
@@ -10,7 +11,7 @@ type ServiceType = {
   title: string;
   description: string;
   path: string;
-  icon: Element;
+  icon: React.ElementType; 
 };
 
 const Services = () => {
@@ -65,7 +66,7 @@ const Services = () => {
                       </p>
                     </div>
                     <div className="text-3xl absolute top-1 right-4 flex items-center cursor-pointer text-orange-500">
-                      {service.icon}
+                      <service.icon /> {/* ✅ Fixed JSX usage */}
                     </div>
                   </div>
                   <div className="absolute bottom-2 right-6 flex items-center text-orange-500 cursor-pointer hover:underline">
