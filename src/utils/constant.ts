@@ -12,16 +12,16 @@ export const services = [
 ];
 
 export const socialLinks = [
-    { name: "Facebook", icon: "ic:baseline-facebook", url: "https://www.facebook.com/profile.php?id=61566739650180" },
-    { name: "Instagram", icon: "mdi:instagram", url: "https://www.instagram.com/xsuite.digital/" },
-    { name: "LinkedIn", icon: "mdi:linkedin", url: "https://www.linkedin.com/company/xsuite-digital/about/" }
+    { name: "Facebook", icon: "ic:baseline-facebook", url: "" },
+    { name: "Instagram", icon: "mdi:instagram", url: "" },
+    { name: "LinkedIn", icon: "mdi:linkedin", url: "https://www.linkedin.com/in/faizan-ali-42512723a/" }
 ];
 
 export const contactDetails = [
-    { type: "Email", value: "info@xsuite.digital", link: "mailto:info@xsuite.digital" },
-    { type: "Phone", value: "+92 331 63 61 916", link: "https://wa.me/923064312116" },
+    { type: "Email", value: "info@xsuite.digital", link: "mailto:faizanali.mentorsol@gmail.com" },
+    { type: "Phone", value: "+92 323 780 57 61", link: "https://wa.me/923237805761" },
     { type: "Timing", value: "Mon-Sat: 9am-5pm" },
-    { type: "Location", value: "Lawrence Road Lahore, Pakistan", link: "https://www.google.com/maps?q=Lawrence+Road" },
+    { type: "Location", value: "Lawrence Road Lahore, Pakistan", link: "" },
 ]
 
 export const navLinks = [
